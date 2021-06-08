@@ -331,22 +331,22 @@ std::string exportRender(std::string resultpath, std::vector<nodeInfo> &nodes, b
     std::sort(nodes.begin(), nodes.end(), comparer); //sort by export_sort_method
 
     //add title line into the list
-    node.group = "Group";
-    node.remarks = "Remarks";
+    node.group = "测速名称";
+    node.remarks = "节点名称";
     if(export_as_new_style)
     {
-        node.pkLoss = "     Loss     ";
-        node.avgPing = "     Ping     ";
-        node.sitePing = "  Google Ping  ";
-        node.avgSpeed = "  AvgSpeed  ";
-        node.maxSpeed = "  MaxSpeed  ";
+        node.pkLoss = "     丢包     ";
+        node.avgPing = "     延迟     ";
+        node.sitePing = "  谷歌延迟  ";
+        node.avgSpeed = "  平均速率(MB)  ";
+        node.maxSpeed = "  峰值速率(MB)  ";
         node.natType = "  UDP NAT Type  ";
     }
     else
     {
         node.pkLoss = "Pk.Loss";
         node.avgPing = "TCP Ping";
-        node.sitePing = "Google Ping";
+        node.sitePing = "  谷歌延迟  ";
         node.avgSpeed = "Avg.Speed";
         node.maxSpeed = "Max.Speed";
         node.natType = "UDP NAT Type";
@@ -435,8 +435,8 @@ std::string exportRender(std::string resultpath, std::vector<nodeInfo> &nodes, b
     //generating information
     std::string gentime = "Generated at " + getTime(3);
     std::string traffic = "Traffic used : " + speedCalc((double)total_traffic) + ". ";
-    std::string about = "By Stair Speedtest Reborn " VERSION ".";
-    std::string title = "  Stair Speedtest Reborn Result Table ( " VERSION " )  ";
+    std::string about = "Hase的鱼龙混杂测速 " VERSION ".";
+    std::string title = "  Hase的鱼龙混杂测速  ";
     //SSRSpeed style
     if(export_as_ssrspeed)
     {
@@ -618,8 +618,8 @@ std::string exportRender(std::string resultpath, vector<nodeInfo> nodes, bool ex
         sort(nodes.begin(), nodes.end(), comparer);//sort by export_sort_method
 
     //add title line into the list
-    node.group = "Group";
-    node.remarks = "Remarks";
+    node.group = "测速名称";
+    node.remarks = "节点名称";
     node.pkLoss = "Pk.Loss";
     node.avgPing = "TCP Ping";
     //node.sitePing = "Bing Ping";
@@ -669,9 +669,9 @@ std::string exportRender(std::string resultpath, vector<nodeInfo> nodes, bool ex
         total_width += maxSpeed_width;
 
     //generating information
-    std::string gentime = "Generated at "+getTime(3);
+    std::string gentime = "Hase在 "+getTime(3) "测的速";
     std::string traffic = "Traffic used : "+speedCalc((double)total_traffic)+". Working Node(s) : ["+std::to_string(onlines)+"/"+std::to_string(node_count)+"]";
-    std::string about = "By Stair Speedtest Reborn " VERSION ".";
+    std::string about = "Hase的鱼龙混杂测速 " VERSION ".";
 
     final_width = max(getWidth(&png, font, fontsize, gentime) + center_align_offset, total_width);
     final_width = max(getWidth(&png, font, fontsize, traffic) + center_align_offset, total_width);
