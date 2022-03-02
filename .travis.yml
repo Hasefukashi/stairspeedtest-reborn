@@ -8,7 +8,7 @@ matrix:
         - docker run -v $TRAVIS_BUILD_DIR:/root/workdir -e TRAVIS_BRANCH -e TRAVIS_TAG multiarch/alpine:x86-latest-stable /bin/sh -c "apk add bash git && cd /root/workdir && bash scripts/build.alpine.release.sh"
       deploy:
         provider: releases
-        api_key: "$GITHUB_OAUTH_TOKEN"
+        api_key: "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"
         file: "stairspeedtest_reborn_linux32.tar.gz"
         skip_cleanup: true
         draft: true
