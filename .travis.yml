@@ -6,8 +6,6 @@ matrix:
       services: docker
       script:
         - docker run -v $TRAVIS_BUILD_DIR:/root/workdir -e TRAVIS_BRANCH -e TRAVIS_TAG multiarch/alpine:x86-latest-stable /bin/sh -c "apk add bash git && cd /root/workdir && bash scripts/build.alpine.release.sh"
-      before_deploy:
-        - tar czf stairspeedtest_reborn_linux32.tar.gz stairspeedtest
       deploy:
         provider: releases
         api_key: "$GITHUB_OAUTH_TOKEN"
