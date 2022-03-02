@@ -14,5 +14,3 @@ matrix:
         file: "stairspeedtest_reborn_linux32.tar.gz"
         skip_cleanup: true
         draft: true
-        on:
-          tags: true
