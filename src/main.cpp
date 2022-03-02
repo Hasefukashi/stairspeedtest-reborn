@@ -557,7 +557,7 @@ void saveResult(std::vector<nodeInfo> &nodes)
     std::string data;
 
     ini.SetCurrentSection("Basic");
-    ini.Set("Tester", "Stair Speedtest Reborn " VERSION);
+    ini.Set("Tester", "风采的测速 Demo" VERSION);
     ini.Set("GenerationTime", getTime(3));
 
     for(nodeInfo &x : nodes)
