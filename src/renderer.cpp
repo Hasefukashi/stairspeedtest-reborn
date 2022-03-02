@@ -433,10 +433,10 @@ std::string exportRender(std::string resultpath, std::vector<nodeInfo> &nodes, b
         total_width += nattype_width;
 
     //generating information
-    std::string gentime = "Generated at " + getTime(3);
+    std::string gentime = "Generated at " + getTime(3) + "By SpeedtestGo";
     std::string traffic = "Traffic used : " + speedCalc((double)total_traffic) + ". ";
-    std::string about = "Hase的鱼龙混杂测速 " VERSION ".";
-    std::string title = "  Hase的鱼龙混杂测速  ";
+    std::string about = "SpeedtestGo " VERSION ".";
+    std::string title = "  SpeedtestGo  ";
     //SSRSpeed style
     if(export_as_ssrspeed)
     {
